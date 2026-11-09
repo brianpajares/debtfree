@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5f1" />
+    <meta name="description" content="Un plan claro para pagar tus deudas y recuperar tu tranquilidad financiera." />
+    <title>Deuda Cero — tu plan hacia la libertad</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="stylesheet" href="/app.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="brand" href="#resumen" aria-label="Deuda Cero, inicio" data-view-link="resumen">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="brand-name">deuda<span>cero</span></span>
+        </a>
+
+        <div class="nav-caption">TU ESPACIO</div>
+        <nav class="primary-nav">
+          <button class="nav-item active" type="button" data-view="resumen">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="4" rx="2"/><rect x="13.5" y="10.5" width="7" height="10" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/></svg>
+            <span>Resumen</span>
+          </button>
+          <button class="nav-item" type="button" data-view="deudas">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 9h17M7 14h3"/></svg>
+            <span>Mis deudas</span><span class="nav-count" id="debt-count">4</span>
+          </button>
+          <button class="nav-item" type="button" data-view="plan">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 6-7"/><path d="M16 6h4v4"/></svg>
+            <span>Mi plan</span>
+          </button>
+          <button class="nav-item" type="button" data-view="actividad">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8.1 8.1 0 0 1-8.3 8.1 8.6 8.6 0 0 1-3.7-.9L4 20l1.3-3.5a7.9 7.9 0 1 1 14.7-5Z"/><path d="M8.5 12h7M12 8.5v7"/></svg>
+            <span>Actividad</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+        <div class="side-note">
+          <span class="side-note-icon" aria-hidden="true">✦</span>
+          <p><strong>Un paso a la vez.</strong><br />Lo estás haciendo mejor de lo que crees.</p>
+          <div class="side-note-line"><span></span></div>
+        </div>
+        <button class="profile-button" type="button" aria-label="Perfil de Alex">
+          <span class="avatar">AL</span>
+          <span class="profile-copy"><strong>Alex López</strong><small>Mi espacio personal</small></span>
+          <svg class="profile-more" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>
+        </button>
+      </aside>
+
+      <main class="main-shell">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="brand-name">deuda<span>cero</span></span></div>
+          <div class="breadcrumb"><span>Mi espacio</span><span class="breadcrumb-slash">/</span><strong id="page-breadcrumb">Resumen</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label" id="today-label"></span>
+            <button class="icon-button notification-button" type="button" id="notification-button" aria-label="Ver notificaciones">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i></i>
+            </button>
+            <button class="button button-primary top-add-button" type="button" data-open-add>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Añadir deuda</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="view active" id="view-resumen" aria-labelledby="welcome-title">
+            <div class="welcome-row">
+              <div><div class="eyebrow"><span class="eyebrow-dot"></span> TU CAMINO, A TU RITMO</div><h1 id="welcome-title">Hola, Alex <span class="wave">✳</span></h1><p class="welcome-subtitle">Cada decisión de hoy te acerca a una vida más libre.</p></div>
+              <div class="sample-pill" id="sample-pill"><span aria-hidden="true">✳</span><span><strong>Plan de ejemplo</strong><small>Puedes ajustarlo a tu realidad</small></span><button type="button" data-reset-demo>Empezar de cero</button></div>
+            </div>
+
+            <section class="hero-card" aria-label="Progreso hacia tu meta">
+              <div class="hero-glow"></div>
+              <div class="hero-copy">
+                <div class="hero-kicker"><span class="hero-kicker-dot"></span> TU META ESTÁ CADA VEZ MÁS CERCA</div>
+                <h2>Tu futuro sin deudas<br /><em>ya está en marcha.</em></h2>
+                <p id="hero-description">Tienes un plan. Tienes el control. Ahora solo toca seguir.</p>
+                <div class="hero-progress-copy"><span>Tu progreso total</span><strong id="hero-progress-label">27%</strong></div>
+                <div class="hero-progress-track"><span id="hero-progress-bar"></span></div>
+                <div class="hero-footer"><span id="hero-paid-label">S/ 9,200 pagados hasta hoy</span><button class="text-button hero-cta" type="button" data-view="plan">Ver mi plan <span aria-hidden="true">→</span></button></div>
+              </div>
+              <div class="hero-visual" aria-hidden="true">
+                <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+                <div class="hero-sun"><span>✳</span></div>
+                <div class="hero-plant plant-a"><i></i><i></i><i></i><b></b></div>
+                <div class="hero-plant plant-b"><i></i><i></i><i></i><b></b></div>
+                <div class="hero-ground"></div>
+                <div class="hero-date-card"><span class="date-card-icon">✦</span><span><small>LIBRE DE DEUDAS</small><strong id="freedom-date">Junio 2027</strong></span></div>
+              </div>
+              <div class="hero-card-grain"></div>
+            </section>
+
+            <div class="stat-grid">
+              <article class="stat-card"><div class="stat-top"><span class="stat-icon stat-icon-debt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.8a2 2 0 0 1 2-2h12"/><path d="M3 9h18m-5 5h2"/></svg></span><span class="stat-change positive"><span>↘</span> <span id="paid-this-month">S/ 1,200</span></span></div><span class="stat-label">Deuda pendiente</span><strong class="stat-value" id="total-debt">S/ 24,800</strong><span class="stat-foot">en <span id="stat-debt-count">4 cuentas</span></span></article>
+              <article class="stat-card"><div class="stat-top"><span class="stat-icon stat-icon-calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3"/><path d="M7.5 3v4M16.5 3v4M4 9.5h16M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></svg></span><span class="stat-tag">ESTE MES</span></div><span class="stat-label">Tu pago mensual</span><strong class="stat-value" id="monthly-payment">S/ 2,260</strong><span class="stat-foot">Mínimos + extra que elegiste</span></article>
+              <article class="stat-card"><div class="stat-top"><span class="stat-icon stat-icon-target"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></svg></span><span class="stat-tag">CON TU PLAN</span></div><span class="stat-label">Intereses que evitarás</span><strong class="stat-value" id="interest-saved">S/ 4,380</strong><span class="stat-foot">frente a pagar solo el mínimo</span></article>
+            </div>
+
+            <div class="dashboard-grid">
+              <article class="panel progress-panel">
+                <div class="panel-heading"><div><span class="panel-kicker">VISTA GENERAL</span><h3>Tu deuda va bajando</h3></div><button class="select-button" id="chart-range" type="button">Próximos 6 meses <span>⌄</span></button></div>
+                <div class="chart-legend"><span class="legend-dot"></span> Saldo proyectado <span class="legend-caption">si mantienes tu plan actual</span></div>
+                <div class="chart-wrap"><div class="chart-y-labels"><span id="chart-max">S/ 25k</span><span id="chart-mid">S/ 12k</span><span>S/ 0</span></div><svg class="progress-chart" id="progress-chart" viewBox="0 0 680 220" preserveAspectRatio="none" role="img" aria-label="Proyección de tu saldo durante los próximos meses"></svg><div class="chart-x-labels" id="chart-labels"></div></div>
+                <div class="chart-note"><span class="chart-note-icon">→</span><span id="chart-note-text">Si sigues así, terminarás de pagar antes de lo esperado.</span></div>
+              </article>
+              <article class="panel plan-panel">
+                <div class="panel-heading"><div><span class="panel-kicker">TU ESTRATEGIA</span><h3>Un plan que funciona</h3></div><span class="sparkle-badge">✳</span></div>
+                <div class="strategy-banner"><span class="strategy-icon">✦</span><span><strong id="strategy-name">Avalancha</strong><small id="strategy-caption">Menos intereses, más ahorro</small></span><button class="round-arrow" type="button" data-view="plan" aria-label="Editar plan">→</button></div>
+                <div class="next-step"><div class="next-step-marker"><span></span></div><div><span class="panel-kicker">SIGUIENTE META</span><strong id="next-debt-name">Pagar Tarjeta Ripley</strong><small id="next-debt-copy">Una cuenta menos, más tranquilidad</small></div></div>
+                <div class="plan-divider"></div>
+                <div class="plan-mini-stats"><span>Este mes pondrás</span><strong id="plan-monthly-total">S/ 2,260</strong></div>
+                <button class="button button-light plan-full-button" type="button" data-view="plan">Ver mi plan completo <span>→</span></button>
+              </article>
+            </div>
+
+            <div class="bottom-grid">
+              <article class="panel debts-panel-preview">
+                <div class="panel-heading"><div><span class="panel-kicker">EN ORDEN</span><h3>Tus deudas</h3></div><button class="link-button" type="button" data-view="deudas">Ver todas <span>→</span></button></div>
+                <div class="debt-list" id="dashboard-debt-list"></div>
+              </article>
+              <article class="panel activity-panel-preview">
+                <div class="panel-heading"><div><span class="panel-kicker">PEQUEÑOS GRANDES LOGROS</span><h3>Tu actividad</h3></div><button class="link-button" type="button" data-view="actividad">Ver historial <span>→</span></button></div>
+                <div class="activity-list compact" id="dashboard-activity-list"></div>
+                <button class="encouragement-card" type="button" data-view="plan"><span class="encouragement-star">✳</span><span><strong>Tu constancia está dando frutos.</strong><small>Cada pago cuenta. Cada paso importa.</small></span><span class="encouragement-arrow">→</span></button>
+              </article>
+            </div>
+            <footer class="page-footer"><span>Hecho para avanzar, sin prisa y sin culpa.</span><span><i></i> Tus datos se guardan solo en este dispositivo</span></footer>
+          </section>
+
+          <section class="view" id="view-deudas" aria-labelledby="deudas-title" hidden>
+            <div class="section-header"><div><div class="eyebrow"><span class="eyebrow-dot"></span> CLARIDAD PARA AVANZAR</div><h1 id="deudas-title">Tus deudas, a la vista.</h1><p class="welcome-subtitle">Saber dónde estás es el primer paso para llegar a donde quieres.</p></div><button class="button button-primary" type="button" data-open-add><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Añadir deuda</button></div>
+            <div class="debt-summary-strip"><div><span>Saldo total</span><strong id="debt-page-total">S/ 24,800</strong></div><div><span>Pago mínimo mensual</span><strong id="debt-page-minimum">S/ 1,760</strong></div><div><span>Tasa promedio</span><strong id="debt-page-apr">35.2%</strong></div><div class="summary-strip-illustration" aria-hidden="true">✳</div></div>
+            <article class="panel full-debt-panel"><div class="panel-heading debt-table-heading"><div><span class="panel-kicker">TUS CUENTAS</span><h3>Todo en un solo lugar</h3></div><div class="filter-pills" role="group" aria-label="Filtrar deudas"><button class="filter-pill active" data-filter="Todas" type="button">Todas</button><button class="filter-pill" data-filter="Tarjeta" type="button">Tarjetas</button><button class="filter-pill" data-filter="Préstamo" type="button">Préstamos</button></div></div><div class="debt-table" id="all-debt-list"></div><div class="empty-state" id="debt-empty" hidden><span>✳</span><strong>Aquí aparecerán tus deudas.</strong><small>Agrega tu primera cuenta para crear tu plan.</small></div></article>
+            <div class="tip-banner"><span class="tip-banner-icon">✦</span><span><strong>Un consejo pequeño, un cambio grande.</strong><small>Revisa tus tasas de interés una vez al año: una tasa menor puede ahorrarte mucho tiempo y dinero.</small></span></div>
+            <footer class="page-footer"><span>Hecho para avanzar, sin prisa y sin culpa.</span><span><i></i> Tus datos se guardan solo en este dispositivo</span></footer>
+          </section>
+
+          <section class="view" id="view-plan" aria-labelledby="plan-title" hidden>
+            <div class="section-header"><div><div class="eyebrow"><span class="eyebrow-dot"></span> UN PLAN QUE SE ADAPTA A TI</div><h1 id="plan-title">Elige tu siguiente paso.</h1><p class="welcome-subtitle">Ajusta el plan a tu vida. No al revés.</p></div></div>
+            <div class="simulator-grid">
+              <article class="panel simulator-controls"><div class="panel-heading"><div><span class="panel-kicker">SIMULADOR DE PAGO</span><h3>¿Cómo quieres avanzar?</h3></div><span class="sparkle-badge">✳</span></div>
+                <div class="control-group"><label class="control-label">Tu estrategia</label><div class="strategy-options" role="radiogroup" aria-label="Estrategia de pago"><button class="strategy-option active" type="button" data-strategy="avalancha" role="radio" aria-checked="true"><span class="strategy-radio"></span><span class="strategy-option-copy"><strong>Avalancha</strong><small>Primero la tasa más alta. Ahorras más intereses.</small></span><span class="strategy-option-icon">→</span></button><button class="strategy-option" type="button" data-strategy="bola" role="radio" aria-checked="false"><span class="strategy-radio"></span><span class="strategy-option-copy"><strong>Bola de nieve</strong><small>Primero la deuda más pequeña. Ganas impulso.</small></span><span class="strategy-option-icon">✳</span></button></div></div>
+                <div class="control-group extra-control"><div class="slider-label"><label class="control-label" for="extra-range">¿Cuánto extra puedes poner al mes?</label><strong id="extra-value">S/ 500</strong></div><input id="extra-range" type="range" min="0" max="2000" step="50" value="500" /><div class="slider-ends"><span>S/ 0</span><span>S/ 2,000</span></div><p class="control-hint">Lo puedes cambiar cuando quieras. Un monto pequeño y constante también suma.</p></div>
+                <div class="monthly-total-card"><span><span class="monthly-total-icon">→</span> Pago mensual estimado</span><strong id="simulator-monthly-total">S/ 2,260</strong></div>
+              </article>
+              <article class="panel simulator-result"><div class="result-topline"><span class="panel-kicker">SI MANTIENES ESTE PLAN</span><span class="result-live"><i></i> EN VIVO</span></div><div class="result-date-wrap"><span class="result-date-icon">✳</span><div><span>Tu fecha de libertad</span><strong id="simulator-date">Junio 2027</strong></div></div><div class="result-divider"></div><div class="result-stat-row"><span>Meses para lograrlo</span><strong id="simulator-months">8 meses</strong></div><div class="result-stat-row"><span>Intereses estimados</span><strong id="simulator-interest">S/ 2,240</strong></div><div class="result-stat-row savings"><span>Ahorras vs. pago mínimo</span><strong id="simulator-savings">S/ 4,380</strong></div><div class="result-chart" id="simulator-chart"></div><div class="result-footnote"><span>✦</span> Una proyección, no una promesa. Los intereses pueden variar.</div></article>
+            </div>
+            <article class="panel payoff-order-panel"><div class="panel-heading"><div><span class="panel-kicker">EL ORDEN DE TU PLAN</span><h3>Una deuda menos cada vez</h3></div><span class="payoff-small-note">Tu pago extra se aplica a la primera de la lista</span></div><div id="payoff-order-list" class="payoff-order-list"></div></article>
+            <footer class="page-footer"><span>Hecho para avanzar, sin prisa y sin culpa.</span><span><i></i> Tus datos se guardan solo en este dispositivo</span></footer>
+          </section>
+
+          <section class="view" id="view-actividad" aria-labelledby="activity-title" hidden>
+            <div class="section-header"><div><div class="eyebrow"><span class="eyebrow-dot"></span> CADA PASO MERECE CONTAR</div><h1 id="activity-title">Mira todo lo que avanzas.</h1><p class="welcome-subtitle">Un registro de tu esfuerzo, tus decisiones y tus logros.</p></div><button class="button button-light" type="button" id="activity-export">Descargar resumen <span aria-hidden="true">↓</span></button></div>
+            <div class="activity-highlight"><span class="activity-highlight-icon">✦</span><div><small>HAS PAGADO EN TOTAL</small><strong id="activity-total-paid">S/ 9,200</strong><span>Tu esfuerzo ya está haciendo diferencia.</span></div><div class="activity-highlight-orbit" aria-hidden="true">✳</div></div>
+            <article class="panel history-panel"><div class="panel-heading"><div><span class="panel-kicker">TU HISTORIAL</span><h3>Todo lo que has logrado</h3></div><span class="history-count" id="history-count">0 movimientos</span></div><div class="activity-list full" id="full-activity-list"></div><div class="empty-state" id="activity-empty" hidden><span>✦</span><strong>Tu historia empieza con el primer pago.</strong><small>Cuando registres uno, lo verás aquí.</small><button class="button button-primary" type="button" data-view="deudas">Ir a mis deudas →</button></div></article>
+            <footer class="page-footer"><span>Hecho para avanzar, sin prisa y sin culpa.</span><span><i></i> Tus datos se guardan solo en este dispositivo</span></footer>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="modal" id="add-modal" aria-labelledby="modal-title">
+      <form class="modal-card" id="debt-form" method="dialog">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button>
+        <div class="modal-symbol">✳</div><div class="eyebrow"><span class="eyebrow-dot"></span> UN PASO HACIA LA CLARIDAD</div><h2 id="modal-title">Agrega una deuda</h2><p class="modal-intro">Ponerla en tu mapa es empezar a recuperar el control.</p>
+        <label class="field-label" for="debt-name">¿Cómo se llama esta cuenta?</label><input class="text-input" id="debt-name" name="name" placeholder="Ej. Tarjeta de crédito" maxlength="50" required />
+        <div class="field-row"><div><label class="field-label" for="debt-kind">Tipo de cuenta</label><select class="text-input" id="debt-kind" name="kind"><option>Tarjeta</option><option>Préstamo</option><option>Personal</option></select></div><div><label class="field-label" for="debt-balance">Saldo actual (S/)</label><input class="text-input" id="debt-balance" name="balance" type="number" min="1" step="0.01" placeholder="0.00" required /></div></div>
+        <div class="field-row"><div><label class="field-label" for="debt-apr">Interés anual (%)</label><input class="text-input" id="debt-apr" name="apr" type="number" min="0" max="100" step="0.1" placeholder="Ej. 24" required /></div><div><label class="field-label" for="debt-min">Pago mínimo mensual (S/)</label><input class="text-input" id="debt-min" name="minimum" type="number" min="0.01" step="0.01" placeholder="0.00" required /></div></div>
+        <div class="modal-actions"><button class="button button-light" type="button" data-close-modal>Ahora no</button><button class="button button-primary" type="submit" id="debt-submit-button">Guardar deuda <span>→</span></button></div>
+      </form>
+    </dialog>
+    <dialog class="modal" id="payment-modal" aria-labelledby="payment-title">
+      <form class="modal-card" id="payment-form" method="dialog">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button><div class="modal-symbol">→</div><div class="eyebrow"><span class="eyebrow-dot"></span> UN LOGRO MÁS</div><h2 id="payment-title">Registra un pago</h2><p class="modal-intro" id="payment-debt-label">Cada pago cuenta. Tómate un segundo para reconocerlo.</p><label class="field-label" for="payment-amount">Monto que pagaste (S/)</label><input class="text-input payment-input" id="payment-amount" name="amount" type="number" min="0.01" step="0.01" required /><div class="modal-actions"><button class="button button-light" type="button" data-close-modal>Cancelar</button><button class="button button-primary" type="submit">Guardar logro <span>✦</span></button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"><span>✦</span><span id="toast-message"></span></div>
+  </body>
+</html>

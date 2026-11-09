@@ -1,0 +1,8 @@
+.git
+.gitignore
+.vercel
+node_modules
+tests
+README.md
+*.zip
+*.log
